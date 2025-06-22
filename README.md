@@ -6,4 +6,6 @@ make it executable using = sudo chmod +x tmux-sessionizer.sh
 
 copy it in usr/bin path using = cp tmux-sessionizer.sh /usr/bin/
 
-optional - set alias using = alias tmux-sessionizer="tmux-sessionizer.sh"
+set alias using = alias tmux-sessionizer="tmux-sessionizer.sh"
+
+run using tmux-sessionizer command
