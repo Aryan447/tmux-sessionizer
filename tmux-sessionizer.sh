@@ -2,6 +2,8 @@
 
 # Set your projects base directory
 # PROJECTS_DIR=~/Projects
+# IF ITS A FOLDER NOT IN HOME DIRECTORY SET YOUR PATH LIKE DOWN BELOW
+# #PROJECTS_DIR="/mnt/d/Projects"
 PROJECTS_DIR=~/.config
 
 # Use fzf to pick a project
@@ -20,7 +22,7 @@ if [ $? != 0 ]; then
   tmux new-session -d -s "$SESSION" -c "$DIR"
 
   # Window 1: nvim
-  tmux send-keys -t "$SESSION:1" 'nvim' C-m
+  tmux send-keys -t "$SESSION:1" 'nvim .' C-m
 
   # Window 2: shell
   tmux new-window -t "$SESSION:2" -c "$DIR"
@@ -28,4 +30,3 @@ fi
 
 # Attach to tmux session
 tmux attach -t "$SESSION"
-
