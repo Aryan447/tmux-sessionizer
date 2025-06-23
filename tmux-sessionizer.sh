@@ -22,11 +22,12 @@ if [ $? != 0 ]; then
   tmux new-session -d -s "$SESSION" -c "$DIR"
 
   # Window 1: nvim
-  tmux send-keys -t "$SESSION:1" 'nvim .' C-m
+  # tmux send-keys -t "$SESSION:1" 'nvim .' C-m
+  tmux send-keys -t "$SESSION:1" clear C-m
 
   # Window 2: shell
   tmux new-window -t "$SESSION:2" -c "$DIR"
 fi
 
 # Attach to tmux session
-tmux attach -t "$SESSION"
+tmux attach -t "$SESSION:1"
